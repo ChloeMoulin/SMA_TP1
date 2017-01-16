@@ -58,22 +58,6 @@ public class GrilleFrame extends JFrame implements Observer {
         new GrilleFrameFinal(m,n, g, this);
     }
     
-    public void afficherAgents() {
-        ArrayList<Agent> agents = g.getAgents();
-        for(Agent a : agents) {
-            agentsPanel[(int)a.getPositionCourante().getX()][(int)a.getPositionCourante().getY()].setBackground(colorList.get(a.getId()+1));
-            agentsPanel[(int)a.getPositionCourante().getX()][(int)a.getPositionCourante().getY()].setOccupe(true);
-            
-        }
-        for(int i =0; i < m;i++) {
-            for(int j=0;j<n;j++) {
-                if(!agentsPanel[i][j].getOccupe())
-                    agentsPanel[i][j].setBackground(colorList.get(0));
-                else
-                    agentsPanel[i][j].setOccupe(false);
-            }
-        }
-    }
     
     public void afficherCases(Case c) {
         if(c.getContenu()!= null)
